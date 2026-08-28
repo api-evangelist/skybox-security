@@ -1,0 +1,70 @@
+generated: '2026-08-28'
+method: searched
+source: >-
+  Registry metadata endpoints (registry.npmjs.org, pypi.org/pypi/*/json,
+  rubygems.org/api/v1/gems/*.json) plus api.github.com/orgs/* — probed 2026-08-28.
+note: >-
+  No first-party Skybox Security client library was found in any public registry, and
+  Skybox never operated a public GitHub organization. Skybox's REST API was documented
+  only to authenticated customers at docs.skyboxsecurity.com (now a 301 to
+  tufin.com/developers), and its published integrations were vendor-side connectors
+  (Splunk, ServiceNow, Elasticsearch) rather than distributed SDKs. The only Skybox API
+  client the search surfaced is jorritfolmer/TA-skybox, a community Splunk technical
+  add-on — third-party, not first-party, and therefore not recorded as a package here.
+  The bare names `skybox` on npm, PyPI and RubyGems are unrelated third-party packages
+  and are recorded below as explicit non-matches so a later run does not mistake them
+  for Skybox artifacts.
+package_count: 0
+official_sdk_count: 0
+packages: []
+registry_probes:
+- registry: npm
+  name: skybox
+  status: 200
+  official: false
+  version: 0.0.0
+  published: null
+  note: >-
+    Unrelated package — maintainer "arrowtsx", no description, no repository, version
+    0.0.0 placeholder. Not Skybox Security.
+- registry: npm
+  name: skyboxsecurity
+  status: 404
+  version: null
+  published: null
+- registry: npm
+  name: skybox-security
+  status: 404
+  version: null
+  published: null
+- registry: pypi
+  name: skybox
+  status: 200
+  official: false
+  version: '2026.3.23'
+  published: null
+  note: Unrelated package — no summary, author or homepage tying it to Skybox Security.
+- registry: pypi
+  name: skyboxsecurity
+  status: 404
+  version: null
+  published: null
+- registry: pypi
+  name: skybox-security
+  status: 404
+  version: null
+  published: null
+- registry: rubygems
+  name: skybox
+  status: 200
+  official: false
+  version: null
+  published: null
+  note: Unrelated gem; not published by Skybox Security.
+github_orgs_probed:
+- org: skyboxsecurity
+  status: 404
+- org: skybox-security
+  status: 404
+- org: SkyboxSecurity
+  status: 404

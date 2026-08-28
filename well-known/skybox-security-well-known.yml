@@ -1,0 +1,65 @@
+generated: '2026-08-28'
+method: probed
+source: live probes of https://www.skyboxsecurity.com/.well-known/*
+note: >-
+  Skybox Security ceased operations on 2026-02-24 (see apis.yml description). Every path
+  on www.skyboxsecurity.com — including every /.well-known/* path — 301-redirects to
+  https://www.tufin.com/tufin-expresspath-program and returns the same 190,166-byte
+  WordPress HTML page belonging to Tufin, the acquirer. This is a catch-all soft-200, not
+  a served discovery document: no /.well-known/ resource was fetched or saved, hit_count
+  is 0, and NO WellKnown or SecurityTxt pointer is emitted. Attributing any document
+  served on this host to Skybox would credit Skybox with a surface Tufin serves.
+hit_count: 0
+soft_404_control:
+  url: https://www.skyboxsecurity.com/.well-known/definitely-not-a-real-path-xyz
+  behaviour: >-
+    Host answers 200 for every /.well-known/* path with an identical body; the five
+    probes below returned byte-identical 190,166-byte HTML after a cross-host 301.
+  bytes: 190166
+  content_type: text/html; charset=UTF-8
+hosts:
+- host: https://www.skyboxsecurity.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 200
+    file: null
+    note: soft-200 catch-all — HTML redirect target on tufin.com, not a document
+  - path: /.well-known/openid-configuration
+    status: 200
+    file: null
+    note: soft-200 catch-all — HTML redirect target on tufin.com, not a document
+  - path: /.well-known/oauth-authorization-server
+    status: 200
+    file: null
+    note: soft-200 catch-all — HTML redirect target on tufin.com, not a document
+  - path: /.well-known/api-catalog
+    status: 200
+    file: null
+    note: soft-200 catch-all — HTML redirect target on tufin.com, not a document
+  - path: /.well-known/ai-plugin.json
+    status: 200
+    file: null
+    note: soft-200 catch-all — HTML redirect target on tufin.com, not a document
+  - path: /.well-known/agent-card.json
+    status: 200
+    file: null
+    note: >-
+      soft-200 catch-all — body is HTML, not a JSON AgentCard object. Rejected per the
+      a2a recipe; no a2a/ artifact written.
+  - path: /.well-known/agent.json
+    status: 200
+    file: null
+    note: >-
+      soft-200 catch-all — body is HTML, not a JSON AgentCard object. Rejected per the
+      a2a recipe; no a2a/ artifact written.
+unreachable_hosts:
+- host: api.skyboxsecurity.com
+  reason: NXDOMAIN — does not resolve
+- host: developer.skyboxsecurity.com
+  reason: NXDOMAIN — does not resolve
+- host: status.skyboxsecurity.com
+  reason: NXDOMAIN — does not resolve
+- host: trust.skyboxsecurity.com
+  reason: NXDOMAIN — does not resolve
+- host: community.skyboxsecurity.com
+  reason: NXDOMAIN — does not resolve
