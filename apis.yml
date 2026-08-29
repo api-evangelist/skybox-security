@@ -25,6 +25,17 @@ x-status-detail: Ceased operations 2026-02-24. Tufin acquired a limited slice of
 x-source: harvest:secondary-market
 x-tier: stub
 x-tier-reason: harvest
+deliveryModel:
+  model: unknown
+  open_source: false
+  commercial: false
+  callable_host: false
+  label: Delivery model not determined — needs a product licence on record
+  confidence: low
+  source:
+  - none
+  generated: '2026-08-28'
+  method: derived
 specificationVersion: '0.20'
 created: '2026-08-28'
 modified: '2026-08-28'
